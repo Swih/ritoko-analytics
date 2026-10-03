@@ -1,9 +1,15 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "pnpm run build",
+  "buildCommand": "npx --yes pnpm@12.3.4 run build",
   "installCommand": "npx --yes pnpm@12.3.4 install --frozen-lockfile",
   "framework": "nextjs",
   "regions": [
     "fra1"
+  ],
+  "crons": [
+    {
+      "path": "/internal/retention",
+      "schedule": "0 3 * * *"
+    }
   ]
 }
